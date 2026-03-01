@@ -11,6 +11,6 @@ A ideia do aplicativo é simples: juntar, em um só lugar, a agenda do dia a dia
 Mais do que organizar tarefas, o GAJU quer incentivar o autoconhecimento e mostrar que é possível ser produtiva sem ignorar o próprio corpo. O projeto valoriza praticidade, acolhimento e cuidado com a privacidade dos dados. A proposta é oferecer uma solução simples, segura e inclusiva, que ajude a trazer mais equilíbrio, previsibilidade e harmonia para a rotina.
 
 TECNOLOGIAS
-LINGUAGENS -> 
-FRAMEWORK ->
+LINGUAGENS -> Python, JavaScript
+FRAMEWORK -> React
 BANCO DE DADOS -> SQL

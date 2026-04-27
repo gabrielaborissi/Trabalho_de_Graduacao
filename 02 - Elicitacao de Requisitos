@@ -1,1 +1,19 @@
+Requisitos Funcionais
+ID	    Descrição
+RF001	  O sistema deve permitir que o usuário registre dados biológicos diários para mapeamento de padrões.
+RF002	  O sistema deve prever fases do ciclo biológico com base no histórico inserido pelo usuário.
+RF003	  O sistema deve oferecer recomendações de produtividade ou descanso baseadas no estado biológico atual do usuário.
+RF004	  O sistema deve permitir a criação, edição e exclusão de eventos em uma agenda particular.
+RF005	  O sistema deve permitir a marcação de compromissos com meses de antecedência, garantindo a persistência e visualização clara a longo prazo.
+RF006	  O sistema deve integrar a visualização dos ciclos biológicos sobreposta ao calendário de compromissos.
+RF007	  O sistema deve enviar lembretes de compromissos próximos.
+RF008	  O sistema deve emitir alertas quando um compromisso agendado coincidir com uma fase de baixa energia (baseada no padrão biológico).
+
+Requisitos Não Funcionais
+ID	    Descrição
+RNF001	A interface deve ser intuitiva, permitindo que o usuário visualize a relação entre saúde e agenda com no máximo três cliques.
+RNF002	Devido à natureza sensível dos dados biológicos, todas as informações de saúde devem ser criptografadas de ponta a ponta.
+RNF003	O carregamento da agenda anual e dos dados históricos de ciclos não deve ultrapassar 2 segundos.
+RNF004	O sistema deve estar disponível 99,9% do tempo, visto que o usuário depende dele para organização diária.
+RNF005	O sistema deve ser responsivo, funcionando adequadamente em dispositivos móveis (Android/iOS) e navegadores desktop.
 

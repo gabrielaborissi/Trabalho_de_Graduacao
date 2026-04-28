@@ -1,1 +1,39 @@
+1. Introdução
+O GAJU é uma solução tecnológica que integra a gestão de compromissos pessoais a padrões biológicos internos. O objetivo é permitir que o usuário planeje sua rotina com base em sua previsibilidade fisiológica, otimizando a produtividade e o bem-estar.
+________________________________________
+2. Requisitos Funcionais (RF)
+Os requisitos funcionais descrevem as funcionalidades diretas que o software deve oferecer.
+ID	    Nome do Requisito	  Descrição	                                                                                            Prioridade
+RF001	Registro de Ciclo	  O sistema deve permitir a inserção de datas de início/fim do ciclo menstrual e sintomas diários.	    Alta
+RF002	Cálculo Preditivo	  O sistema deve processar os dados inseridos para prever fases futuras (ovulação, TPM, etc.).	        Alta
+RF003	Gestão de Agenda	  O sistema deve permitir o CRUD (Criar, Ler, Atualizar, Deletar) de eventos e compromissos.	        Alta
+RF004	Cruzamento de Dados	  O sistema deve sobrepor visualmente o calendário biológico ao calendário de compromissos.	            Alta
+RF005	Análise de Conflito	  O sistema deve alertar o usuário quando um evento for marcado em um dia de baixa energia prevista.	Média
+RF006	Sugestão de Saúde	  O sistema deve oferecer recomendações baseadas no estado biológico (ex: "foco em descanso hoje").	    Média
+RF007	Notificações	      O sistema deve enviar alertas sobre compromissos e lembretes para registro de dados.	                Baixa
+________________________________________
+3. Requisitos Não Funcionais (RNF)
+Os requisitos não funcionais definem as restrições e qualidades do sistema.
+ID	    Categoria	      Descrição	                                                                                          Prioridade
+RNF001	Segurança	      Os dados biológicos e de saúde devem ser criptografados conforme as diretrizes da LGPD.	          Alta
+RNF002	Disponibilidade   O sistema deve estar disponível para consulta 99.9% do tempo.	                                      Alta
+RNF003	Portabilidade	  A interface deve ser responsiva para uso em navegadores Desktop e dispositivos Mobile.	          Alta
+RNF004	Usabilidade    	  O fluxo de agendamento não deve exigir mais do que 3 cliques para ser concluído.	                  Média
+RNF005	Performance  	  O tempo de resposta para geração de previsões não deve exceder 2 segundos.	                      Média
+________________________________________
+4. Regras de Negócio (RN)
+Regras que ditam como as funcionalidades operam logicamente.
+•	RN01: O sistema só poderá realizar previsões (RF002) após o usuário ter registrado, no mínimo, 3 meses de dados históricos.
+•	RN02: Dados sensíveis de saúde não podem ser compartilhados com terceiros em nenhuma hipótese.
+•	RN03: O sistema deve priorizar a visualização da agenda particular em casos de tela reduzida (mobile).
+________________________________________
+5. Casos de Uso Resumidos
+UC01: Registrar Dados Biológicos
+•	Ator: Usuário.
+•	Fluxo Principal: O usuário acessa a aba "Saúde", seleciona a data, marca os sintomas sentidos e salva. O sistema confirma o registro e atualiza as previsões.
+UC02: Agendar Compromisso Inteligente
+•	Ator: Usuário e Sistema.
+•	Fluxo Principal: O usuário insere um evento para uma data futura. O sistema consulta a RN01 e o RF005. Se houver previsão de baixa energia, o sistema exibe um alerta sugerindo uma data alternativa.
+
+
 

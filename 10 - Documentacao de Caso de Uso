@@ -1,1 +1,108 @@
+1. Descrição dos Atores 
+
+Ator                       Descrição
+Usuário                   Ator principal. Indivíduo que busca gerenciar sua rotina integrando dados biológicos.
+Sistema de Notificação    Ator secundário (sistema). Responsável pelo envio de alertas push ou notificações de sistema.
+API de Calendário         Ator secundário (externo). Interface para sincronização com Google Calendar, Outlook, etc.
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+2. Quadro Resumo de Casos de Uso 
+
+ID      Caso de Uso                            Prioridade      Descrição
+UC01    Registrar Ciclo Biológico              Essencial        O usuário insere dados sobre seu estado físico e biológico atual.
+UC02    Visualizar Janelas de Produtividade    Essencial        O sistema exibe os melhores horários para atividades baseado no UC01.
+UC03    Gerenciar Tarefas/Agenda               Essencial        CRUD de eventos e tarefas na agenda interna.
+UC04    Sincronizar Calendários                Importante       Integração de eventos entre o GAJU e calendário.
+UC05    Configurar Alertas                     Desejável        Definição de lembretes para pausas e hidratação.
+UC06    Gerar Relatório                        Importante       Compilado estatístico sobre a harmonia entre rotina e biologia.
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+3. Especificação Detalhada 
+
+UC01 – Registrar Ciclo Biológico 
+Ator -> Principal: Usuário. 
+Resumo -> Permite que o usuário insira dados subjetivos e fisiológicos sobre seu estado atual. 
+Pré-condições ->  O usuário deve estar autenticado no sistema. 
+Fluxo Principal 
+* O usuário seleciona a opção "Registrar Status".
+* O sistema apresenta um formulário com campos de sono, humor e nível de energia.
+* O usuário preenche os dados e confirma.
+* O sistema valida as informações e armazena no banco de dados.
+* O sistema confirma o registro com uma mensagem de sucesso.
+Fluxo Alternativo -> Caso campos obrigatórios fiquem vazios, o sistema emite um alerta e solicita o preenchimento antes de salvar.
+Pós-condições  -> Os dados biológicos são atualizados e o algoritmo de janelas de produtividade é recalculado. 
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+UC02 – Visualizar Janelas de Produtividade 
+Ator Principal -> Usuário. 
+Resumo -> Apresenta visualmente os melhores momentos do dia para diferentes tipos de tarefas.  
+Pré-condições -> Existência de dados registrados no UC01.  
+Fluxo Principal 
+* O usuário acessa a tela de visualização diária/semanal.
+* O sistema recupera os registros do UC01 e aplica o algoritmo de processamento biológico.
+* O sistema gera um gráfico ou linha do tempo indicando zonas de "Foco Alto", "Criatividade" e "Descanso".
+* O usuário visualiza as janelas sobrepostas aos compromissos da agenda.
+* Fluxo Alternativo -> Se não houver dados biológicos recentes, o sistema exibe uma mensagem sugerindo que o usuário realize o UC01 para obter precisão. 
+Pós-condições -> O usuário obtém o suporte visual para a tomada de decisão sobre seu planejamento diário. 
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+UC03 – Gerenciar Tarefas/Agenda 
+Ator Principal -> Usuário. 
+Resumo -> Realiza o CRUD (Criar, Ler, Atualizar, Deletar) de tarefas e eventos na agenda local.   
+Pré-condições -> N/A.  
+Fluxo Principal 
+* O usuário seleciona um horário ou lista de tarefas.
+* O usuário insere título, descrição e prioridade da tarefa.
+* O sistema salva a tarefa e a exibe na interface.
+Fluxo Alternativo -> O usuário seleciona uma tarefa existente e solicita "Excluir". O sistema pede confirmação e remove o registro.  
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+UC04 – Sincronizar Calendários 
+Ator Principal -> Usuário, API de Calendário Externo, Sistema de Notificação.  
+Resumo -> Integra eventos de fontes externas (Google, Outlook) à agenda do GAJU. 
+Pré-condições -> Conexão com a internet e permissão de acesso à API. 
+Fluxo Principal 
+* O usuário solicita a sincronização de contas externas.
+* O sistema conecta-se à API de Calendário Externo.
+* O sistema importa os eventos e verifica conflitos com a agenda local.
+* O Sistema de Notificação exibe um alerta de conclusão para o Usuário 
+Fluxo Alternativo -> O sistema detecta falha na API, notifica o usuário sobre a falha e mantém os dados locais inalterados.  
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+UC05 – Configurar Alertas de Bem-estar 
+Ator Principal -> Usuário, Sistema de Notificação.  
+Resumo -> Define lembretes automáticos baseados nas necessidades biológicas (pausas, hidratação). 
+Pré-condições -> Aplicativo deve ter permissão de notificações no sistema operacional.  
+Fluxo Principal 
+* O usuário acessa as configurações de alerta.
+* O usuário define a frequência de lembretes ou aceita sugestões baseadas no ciclo.
+* O sistema agenda os gatilhos no Sistema de Notificação.
+Fluxo Alternativo -> O sistema identifica que o SO bloqueou notificações e orienta o usuário a habilitá-las nas configurações do aparelho.  
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+UC06 – Gerar Relatório de Harmonia 
+Ator Principal -> Usuário.
+Resumo -> Fornece uma análise estatística da aderência da rotina aos ritmos biológicos. 
+Pré-condições -> Mínimo de 7 dias de dados nos UC01 e UC03.   
+Fluxo Principal 
+* O usuário solicita a geração de relatório mensal/semanal.
+* O sistema cruza as tarefas concluídas (UC03) com os picos de energia registrados (UC01).
+* O sistema calcula a "Taxa de Harmonia" (porcentagem de tarefas feitas em janelas ideais).
+* O relatório é exibido com insights sobre como melhorar a rotina.
+Fluxo Alternativo -> O sistema informa que o período de análise é muito curto para gerar estatísticas confiáveis.   
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+4. Descrição dos Relacionamentos (Lógica do Diagrama) 
+
+Inclusão (UC2 para UC1): O relacionamento pontilhado no código indica que a funcionalidade de "Visualizar Janelas" é dependente do "Registro Biológico". 
+Interação de Saída (UC4 para SN): Indica que a sincronização de calendários possui um gatilho para o sistema de notificações, garantindo que o usuário seja informado sobre o status da integração (sucesso ou erro de token).
+
 

@@ -1,1 +1,23 @@
+graph TD
+    actor_U["Usuário"]
+    actor_SN["Sistema de Notificação"]
+    actor_API["API de Calendário Externo"]
 
+    subgraph "App GAJU"
+        UC1["Registrar Ciclo Biológico"]
+        UC2["Visualizar Janelas de Produtividade"]
+        UC3["Gerenciar Tarefas/Agenda"]
+        UC4["Sincronizar Calendários"]
+        UC5["Configurar Alertas de Bem-estar"]
+        UC6["Gerar Relatório de Harmonia"]
+    end
+
+    actor_U --> UC1
+    actor_U --> UC2
+    actor_U --> UC3
+    actor_U --> UC4
+    actor_U --> UC5
+    actor_U --> UC6
+
+    UC4 --> SN
+    UC2 -."s1".-> UC1

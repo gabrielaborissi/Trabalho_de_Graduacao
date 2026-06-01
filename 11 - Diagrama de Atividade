@@ -1,1 +1,40 @@
+graph TD
+    A[Início: Acesso à Agenda] --> B{Dados Biológicos Atualizados?}
+    B -- Não --> C[Solicitar Atualização de Status/Sintomas]
+    C --> D[Processar Fase do Ciclo]
+    B -- Sim --> D
+    D --> E[Analisar Compromissos do Dia]
+    E --> F{Conflito de Energia?}
+    F -- Sim --> G[Sugerir Reagendamento ou Pausas]
+    G --> H[Confirmar Ajustes]
+    F -- Não --> I[Manter Planejamento Original]
+    H --> J[Exibir Agenda Otimizada]
+    I --> J
+    J --> K[Fim]
+
+____________________________________________________________________________________________
+
+graph TD
+    Start((Início)) --> Login[Usuário Finaliza Tarefa]
+    Login --> Input[Inserir Nível de Cansaço/Foco]
+    Input --> Save[Salvar Log de Atividade]
+    Save --> Compare{Desvio do Planejado?}
+    Compare -- Sim --> Alert[Gerar Insight sobre Padrão de Comportamento]
+    Compare -- Não --> Progress[Atualizar Barra de Progresso do Ciclo]
+    Alert --> Progress
+    Progress --> End((Fim))
+
+____________________________________________________________________________________________
+
+graph TD
+    Step1[Iniciar Configuração de Ciclo] --> Step2[Informar Data de Início e Duração Média]
+    Step2 --> Step3[Selecionar Marcadores de Produtividade]
+    Step3 --> Step4{Deseja Integrar Calendário Externo?}
+    Step4 -- Sim --> Step5[Autenticar API Google/Outlook]
+    Step5 --> Step6[Mapear Categorias de Eventos]
+    Step4 -- Não --> Step7[Definir Horários de Pico Manuais]
+    Step6 --> Step8[Gerar Matriz de Previsibilidade GAJU]
+    Step7 --> Step8
+    Step8 --> Final[Configuração Concluída]
+
 

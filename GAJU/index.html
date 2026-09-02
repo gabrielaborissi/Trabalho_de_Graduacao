@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GAJU - Harmonizando Produtividade & Ciclo Biológico</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/png" href="LOGO/APENAS LOGO.png">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       BARRA SUPERIOR GLOBAL: CONTROLADOR DO PROTÓTIPO & SELETOR DE TELAS
+       ========================================================================== -->
+  <header class="prototype-topbar">
+    <div class="topbar-container">
+      <div class="brand-badge" data-screen-target="screen-signup" title="Ir para Login">
+        <img src="LOGO/LOGO sem fundo.png" alt="Logo GAJU">
+      </div>
+
+      <!-- Navegador Rápido de Telas -->
+     <nav class="prototype-nav">
+        <button class="nav-screen-btn" data-screen-target="screen-login" data-screen="screen-login">
+           Login
+        </button>
+        <button class="nav-screen-btn" data-screen-target="screen-signup" data-screen="screen-signup">
+          Cadastro
+        </button>
+        <button class="nav-screen-btn" data-screen-target="screen-rec-senha" data-screen="screen-rec-senha">
+         Recuperar Senha
+        </button>
+        <button class="nav-screen-btn active" data-screen-target="screen-dashboard" data-screen="screen-dashboard">
+          Painel Principal
+        </button>
+        <button class="nav-screen-btn" data-screen-target="screen-symptoms" data-screen="screen-symptoms">
+          Registrar Sintomas
+        </button>
+        <button class="nav-screen-btn" data-screen-target="screen-event-reg" data-screen="screen-event-reg">
+          Novo Compromisso
+        </button>
+        <!-- <button class="nav-screen-btn" data-screen-target="screen-report" data-screen="screen-report">
+          <span>📈</span> Relatório de Harmonia
+        </button>
+        <button class="nav-screen-btn" data-screen-target="screen-settings" data-screen="screen-settings">
+          <span>⚙️</span> Ajustes & Sync
+        </button>
+      </nav>-->
+
+      <!-- Simulador de Fases do Ciclo -->
+     <!-- <div class="phase-simulator-pill" title="Simule como a aplicação se adapta a cada momento do ciclo">
+        <span>🔄 Fase:</span>
+        <select id="phase-simulator-select">
+          <option value="auto">Automática (Histórico Real)</option>
+          <option value="menstrual">🩸 Fase Menstrual (Baixa Energia)</option>
+          <option value="follicular" selected>🌱 Fase Folicular (Alta Energia)</option>
+          <option value="ovulatory">✨ Fase Ovulatória (Pico Criativo)</option>
+          <option value="luteal">🌙 Fase Lútea / TPM (Descanso)</option>
+        </select>
+      </div>
+    </div> -->
+  </header>
+
+  <!-- ==========================================================================
+       CONTAINER PRINCIPAL DO PROTÓTIPO (SPA)
+       ========================================================================== -->
+  <main class="prototype-viewport">
+
+    <!-- ========================================================================
+         TELA 1: LOGIN (Baseada em tela login.png)
+         ======================================================================== -->
+    <section id="screen-login" class="screen-view">
+      <div class="auth-split-wrapper">
+        <!-- Banner Esquerdo -->
+        <div class="auth-hero-banner">
+          <div class="banner-top">
+            <img src="LOGO/APENAS LOGO.png" alt="GAJU Ícone" class="banner-logo-img">
+            <span class="banner-logo-text">GAJU</span>
+          </div>
+          <div class="banner-middle">
+            <h1>Cuide do seu<br>ciclo com amor</span></h1>
+            <p>Acompanhe seu ciclo menstrual, humor, sintomas e bem-estar em um só lugar pensado para você.</p>
+            <ul class="banner-features-list">
+              <li><span class="banner-feature-bullet"></span> Controle inteligente do ciclo menstrual</li>
+              <li><span class="banner-feature-bullet"></span> Rastreamento de humor, energia e sintomas</li>
+              <li><span class="banner-feature-bullet"></span> Saúde feminina & produtividade em harmonia</li>
+            </ul>
+          </div>
+          <div class="banner-footer-quote">
+            “Seu corpo, sua história, seu ritmo.”
+          </div>
+        </div>
+
+        <!-- Painel Direito: Formulário de Login -->
+        <div class="auth-form-container">
+          <div class="auth-form-card">
+            <div class="auth-header-mini">
+              <img src="LOGO/APENAS LOGO.png" alt="GAJU" class="logo-icon">
+              <div class="auth-brand-title">GAJU</div>
+              <h2 class="auth-subtitle">Entrar no GAJU</h2>
+            </div>
+
+            <!-- Login Social -->
+           <!--  <div class="social-login-grid">
+              <button type="button" class="btn-social" onclick="showToast('Login com Google simulado!', 'success'); showScreen('screen-dashboard');">
+                <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/></svg>
+                Continuar com Google
+              </button>
+              <button type="button" class="btn-social" onclick="showToast('Login com Apple simulado!', 'success'); showScreen('screen-dashboard');">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.93-2.85-.9.04-1.99.6-2.63 1.35-.56.65-.96 1.72-.83 2.74 1.01.08 2.03-.54 2.53-1.24z"/></svg>
+                Continuar com Apple
+              </button>
+            </div>
+
+            <div class="auth-divider"><span>ou</span></div>-->
+
+            <!-- Formulário Manual -->
+            <form id="form-login">
+              <div class="form-group">
+                <div class="input-icon-wrapper">
+                  <span class="input-icon-left">✉️</span>
+                  <input type="text" class="form-control" placeholder="E-mail ou telefone" value="gabriela@gaju.app" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-icon-wrapper">
+                  <span class="input-icon-left">🔒</span>
+                  <input type="password" id="login-password" class="form-control" placeholder="Senha" value="12345678" required>
+                  <button type="button" class="input-icon-right toggle-password-btn" data-for="login-password">👁️</button>
+                </div>
+              </div>
+
+              <div class="auth-actions-row">
+                <label class="custom-checkbox" style="margin:0;">
+                  <input type="checkbox" checked> Lembrar-me
+                </label>
+                <a href="#" data-screen-target="screen-rec-senha">Esqueceu a senha?</a>
+              </div>
+
+              <button type="submit" class="btn-primary">Entrar</button>
+            </form>
+
+            <div class="auth-bottom-switch">
+              Não tem uma conta? <button type="button" class="btn-outline" style="margin-top:10px;" data-screen-target="screen-signup">Criar nova conta</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         TELA 2: CADASTRO EM ETAPAS (Baseada em tela cadastro.png)
+         ======================================================================== -->
+    <section id="screen-signup" class="screen-view">
+      <div class="auth-split-wrapper">
+        <!-- Banner Esquerdo -->
+        <div class="auth-hero-banner">
+          <div class="banner-top">
+            <img src="LOGO/APENAS LOGO.png" alt="GAJU" class="banner-logo-img">
+            <span class="banner-logo-text">GAJU</span>
+          </div>
+          <div class="banner-middle">
+            <h1>Bem-vinda ao<br>GAJU</h1>
+            <p>Vamos criar sua conta e calibrar seu perfil biológico em poucos passos simples.</p>
+            <ul class="banner-features-list">
+              <li><span class="banner-feature-bullet"></span> 1. Dados pessoais básicos</li>
+              <li><span class="banner-feature-bullet"></span> 2. Informações de ciclo & saúde</li>
+              <li><span class="banner-feature-bullet"></span> 3. Janelas de produtividade prontas</li>
+            </ul>
+          </div>
+          <div class="banner-footer-quote">
+            “Seu corpo, sua história, seu ritmo.”
+          </div>
+        </div>
+
+        <!-- Painel Direito: Formulário com Stepper -->
+        <div class="auth-form-container">
+          <div class="auth-form-card" style="max-width: 480px;">
+            
+            <!-- Stepper Progress Bar -->
+            <div class="stepper-header">
+              <div class="step-item active" id="step-badge-1">
+                <div class="step-circle">1</div>
+                <span class="step-label">Dados Pessoais</span>
+              </div>
+              <div class="step-item" id="step-badge-2">
+                <div class="step-circle">2</div>
+                <span class="step-label">Saúde</span>
+              </div>
+              <div class="step-item" id="step-badge-3">
+                <div class="step-circle">3</div>
+                <span class="step-label">Confirmação</span>
+              </div>
+            </div>
+
+            <!-- ETAPA 1: Dados Pessoais -->
+            <div id="signup-step-1" class="step-tab-content active-step">
+              <h2 style="font-size:1.4rem; margin-bottom:4px;">Dados Pessoais</h2>
+              <p style="color:var(--text-muted); font-size:0.88rem; margin-bottom:18px;">Preencha suas informações para criar sua conta</p>
+
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label class="form-label">Nome</label>
+                  <input type="text" class="form-control" placeholder="Gabriela" value="Gabriela">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Sobrenome</label>
+                  <input type="text" class="form-control" placeholder="Borissi" value="Borissi">
+                </div>
+              </div>
+
+              <!-- Mini Calendário de Seleção da Data de Nascimento -->
+              <div class="form-group">
+                <label class="form-label">📅 Data de Nascimento</label>
+                <div class="calendar-picker-card">
+                  <div class="cal-header-controls">
+                    <button type="button" class="cal-btn-nav" id="birth-btn-prev" title="Mês anterior">‹</button>
+                    <div class="cal-selectors-group">
+                      <select id="birth-month-select">
+                        <option value="0">Janeiro</option>
+                        <option value="1">Fevereiro</option>
+                        <option value="2" selected>Março</option>
+                        <option value="3">Abril</option>
+                        <option value="4">Maio</option>
+                        <option value="5">Junho</option>
+                        <option value="6">Julho</option>
+                        <option value="7">Agosto</option>
+                        <option value="8">Setembro</option>
+                        <option value="9">Outubro</option>
+                        <option value="10">Novembro</option>
+                        <option value="11">Dezembro</option>
+                      </select>
+                      <select id="birth-year-select">
+                        <option value="2015">2015</option>
+                        <option value="2014">2014</option>
+                        <option value="2013">2013</option>
+                        <option value="2012">2012</option>
+                        <option value="2011">2011</option>
+                        <option value="2010">2010</option>
+                        <option value="2009">2009</option>
+                        <option value="2008">2008</option>
+                        <option value="2007">2007</option>
+                        <option value="2006">2006</option>
+                        <option value="2005">2005</option>
+                        <option value="2004">2004</option>
+                        <option value="2003">2003</option>
+                        <option value="2002">2002</option>
+                        <option value="2001">2001</option>
+                        <option value="2000" selected>2000</option>
+                        <option value="1999">1999</option>
+                        <option value="1998">1998</option>
+                        <option value="1997">1997</option>
+                        <option value="1996">1996</option>
+                        <option value="1995">1995</option>
+                        <option value="1994">1994</option>
+                        <option value="1993">1993</option>
+                        <option value="1992">1992</option>
+                        <option value="1991">1991</option>
+                        <option value="1990">1990</option>
+                        <option value="1989">1989</option>
+                        <option value="1988">1988</option>
+                        <option value="1987">1987</option>
+                        <option value="1986">1986</option>
+                        <option value="1985">1985</option>
+                        <option value="1984">1984</option>
+                        <option value="1983">1983</option>
+                        <option value="1982">1982</option>
+                        <option value="1981">1981</option>
+                        <option value="1980">1980</option>
+                        <option value="1979">1979</option>
+                        <option value="1978">1978</option>
+                        <option value="1977">1977</option>
+                        <option value="1976">1976</option>
+                        <option value="1975">1975</option>
+                        <option value="1974">1974</option>
+                        <option value="1973">1973</option>
+                        <option value="1972">1972</option>
+                        <option value="1971">1971</option>
+                        <option value="1970">1970</option>
+                        <option value="1965">1965</option>
+                        <option value="1960">1960</option>
+                        <option value="1955">1955</option>
+                        <option value="1950">1950</option>
+                      </select>
+                    </div>
+                    <button type="button" class="cal-btn-nav" id="birth-btn-next" title="Próximo mês">›</button>
+                  </div>
+                  <div class="cal-grid-days" id="birth-cal-grid">
+                    <div class="cal-weekday">Dom</div><div class="cal-weekday">Seg</div><div class="cal-weekday">Ter</div><div class="cal-weekday">Qua</div><div class="cal-weekday">Qui</div><div class="cal-weekday">Sex</div><div class="cal-weekday">Sáb</div>
+                    <div class="cal-day-cell other-month">27</div><div class="cal-day-cell other-month">28</div><div class="cal-day-cell other-month">29</div>
+                    <div class="cal-day-cell">1</div><div class="cal-day-cell">2</div><div class="cal-day-cell">3</div><div class="cal-day-cell">4</div>
+                    <div class="cal-day-cell">5</div><div class="cal-day-cell">6</div><div class="cal-day-cell">7</div><div class="cal-day-cell">8</div>
+                    <div class="cal-day-cell">9</div><div class="cal-day-cell">10</div><div class="cal-day-cell">11</div><div class="cal-day-cell">12</div>
+                    <div class="cal-day-cell">13</div><div class="cal-day-cell">14</div><div class="cal-day-cell selected">15</div><div class="cal-day-cell">16</div>
+                    <div class="cal-day-cell">17</div><div class="cal-day-cell">18</div><div class="cal-day-cell">19</div><div class="cal-day-cell">20</div>
+                    <div class="cal-day-cell">21</div><div class="cal-day-cell">22</div><div class="cal-day-cell">23</div><div class="cal-day-cell">24</div>
+                    <div class="cal-day-cell">25</div><div class="cal-day-cell">26</div><div class="cal-day-cell">27</div><div class="cal-day-cell">28</div>
+                    <div class="cal-day-cell">29</div><div class="cal-day-cell">30</div><div class="cal-day-cell">31</div>
+                  </div>
+                  <div id="birth-selected-display" style="text-align:center; margin-top:10px; font-size:0.85rem; font-weight:700; color:var(--c-crimson-500);">
+                    Data Selecionada: 15 de Março de 2000
+                  </div>
+                </div>
+                <div class="tip-callout">
+                  <span>Sua data de nascimento ajuda a personalizar as recomendações biológicas e o ritmo de autocuidado.</span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">E-mail</label>
+                <div class="input-icon-wrapper">
+                  <span class="input-icon-left">✉️</span>
+                  <input type="email" class="form-control" placeholder="seu@email.com" value="gabriela@gaju.app">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Senha</label>
+                <div class="input-icon-wrapper">
+                  <span class="input-icon-left">🔒</span>
+                  <input type="password" id="signup-password" class="form-control" placeholder="Mínimo 8 caracteres" value="senha1234">
+                </div>
+                <div class="password-strength-bar">
+                  <div id="signup-strength-fill" class="password-strength-fill"></div>
+                </div>
+                <span id="signup-strength-text" class="password-strength-text">Força da senha: Média</span>
+              </div>
+
+              <label class="custom-checkbox">
+                <input type="checkbox" checked>
+                <span>Ao criar conta, você concorda com nossos <a href="#">Termos de Uso</a> e <a href="#">Política de Privacidade</a> (LGPD).</span>
+              </label>
+
+              <button type="button" class="btn-primary" onclick="nextSignupStep(2)">Próximo passo →</button>
+            </div>
+
+            <!-- ETAPA 2: Informações de Saúde -->
+            <div id="signup-step-2" class="step-tab-content">
+              <h2 style="font-size:1.4rem; margin-bottom:4px;">Informações de Ciclo & Saúde</h2>
+              <p style="color:var(--text-muted); font-size:0.88rem; margin-bottom:18px;">Esses dados alimentam o algoritmo de previsão preditiva (RF002)</p>
+
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label class="form-label">Duração Média do Ciclo</label>
+                  <select class="form-control">
+                    <option>26 dias</option>
+                    <option selected>28 dias (Padrão)</option>
+                    <option>30 dias</option>
+                    <option>32 dias</option>
+                    <option>Irregular</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Duração da Menstruação</label>
+                  <select class="form-control">
+                    <option>3 dias</option>
+                    <option>4 dias</option>
+                    <option selected>5 dias</option>
+                    <option>6 dias</option>
+                    <option>7 dias</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Data da Última Menstruação</label>
+                <input type="date" class="form-control" value="2026-08-22">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Método Contraceptivo em Uso</label>
+                <select class="form-control">
+                  <option selected>Pílula Anticoncepcional Combinada</option>
+                  <option>DIU Hormonal (Mirena / Kyleena)</option>
+                  <option>DIU de Cobre / Prata</option>
+                  <option>Implante Subdérmico</option>
+                  <option>Injeção Mensal/Trimestral</option>
+                  <option>Nenhum / Método de Barreira</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Qual é seu principal objetivo com o GAJU?</label>
+                <select class="form-control">
+                  <option selected>Harmonizar produtividade e tarefas com meu ciclo</option>
+                  <option>Prever fases de TPM e organizar descanso</option>
+                  <option>Planejar treinos e energia física</option>
+                  <option>Acompanhamento e autoconhecimento geral</option>
+                </select>
+              </div>
+
+              <div class="form-row-2" style="margin-top:20px;">
+                <button type="button" class="btn-outline" onclick="nextSignupStep(1)">← Voltar</button>
+                <button type="button" class="btn-primary" onclick="nextSignupStep(3)">Próximo passo →</button>
+              </div>
+            </div>
+
+            <!-- ETAPA 3: Confirmação e Boas-Vindas -->
+            <div id="signup-step-3" class="step-tab-content">
+              <div style="text-align:center; padding:10px 0;">
+                <img src="LOGO/LOGO sem fundo.png" alt="GAJU" style="height:88px; margin-bottom:14px;">
+                <h2 style="font-size:1.6rem; color:var(--c-crimson-500); margin-bottom:6px;">Perfil Criado com Sucesso!</h2>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:20px;">Seu modelo preditivo inteligente já mapeou suas próximas janelas de foco, criatividade e descanso.</p>
+
+                <div class="dash-recommendation-card" style="text-align:left; margin-bottom:24px;">
+                  <h4> Sua Primeira Previsão</h4>
+                  <p>Hoje você está na <strong>Fase Folicular (Dia 9)</strong>: Excelente período para reuniões decisivas, treinos de força e criação de projetos!</p>
+                </div>
+
+                <button type="button" class="btn-primary" onclick="showToast('Bem-vinda ao GAJU! Painel sincronizado.', 'success'); showScreen('screen-dashboard');">
+                  Acessar Meu Painel GAJU 
+                </button>
+              </div>
+            </div>
+
+            <div class="auth-bottom-switch">
+              Já tem uma conta? <a href="#" data-screen-target="screen-login">Entrar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         TELA 3: RECUPERAÇÃO DE SENHA (frmRecSenha modernizado)
+         ======================================================================== -->
+    <section id="screen-rec-senha" class="screen-view">
+      <div class="auth-split-wrapper" style="max-width: 900px; margin: 0 auto;">
+        <div class="auth-hero-banner">
+          <div class="banner-top">
+            <img src="LOGO/APENAS LOGO.png" alt="GAJU" class="banner-logo-img">
+            <span class="banner-logo-text">GAJU</span>
+          </div>
+          <div class="banner-middle">
+            <h1>Recuperação de acesso</h1>
+            <p>Não se preocupe, seus dados biológicos e compromissos continuam 100% seguros e criptografados.</p>
+          </div>
+          <div class="banner-footer-quote">
+            “Cuidamos da sua segurança para você cuidar do seu ritmo.”
+          </div>
+        </div>
+
+        <div class="auth-form-container">
+          <div class="auth-form-card">
+            <div class="auth-header-mini">
+              <div class="auth-brand-title">RECUPERAR SENHA</div>
+              <p style="font-size:0.88rem; color:var(--text-muted);">Informe seu e-mail para receber as instruções de redefinição.</p>
+            </div>
+
+            <form id="form-rec-senha">
+              <div class="form-group">
+                <label class="form-label">Informe seu E-mail Cadastrado</label>
+                <div class="input-icon-wrapper">
+                  <span class="input-icon-left">✉️</span>
+                  <input type="email" class="form-control" placeholder="seu@email.com" value="gabriela@gaju.app" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Digite a Nova Senha</label>
+                <div class="input-icon-wrapper">
+                  <span class="input-icon-left">🔒</span>
+                  <input type="password" id="rec-new-password" class="form-control" placeholder="Mínimo 8 caracteres" required>
+                  <button type="button" class="input-icon-right toggle-password-btn" data-for="rec-new-password">👁️</button>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Confirme a Nova Senha</label>
+                <div class="input-icon-wrapper">
+                  <span class="input-icon-left">🔒</span>
+                  <input type="password" id="rec-confirm-password" class="form-control" placeholder="Repita a nova senha" required>
+                  <button type="button" class="input-icon-right toggle-password-btn" data-for="rec-confirm-password">👁️</button>
+                </div>
+              </div>
+
+              <button type="submit" class="btn-primary" style="margin-top:10px;">Salvar Alterações</button>
+            </form>
+
+            <div class="auth-bottom-switch">
+              Lembrou sua senha? <a href="#" data-screen-target="screen-login">Voltar ao Login</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         TELA 4: DASHBOARD INTEGRADO (frmPagInicial Avançado)
+         ======================================================================== -->
+    <section id="screen-dashboard" class="screen-view active-screen">
+      <div class="dashboard-grid-layout">
+        
+        <!-- COLUNA ESQUERDA: Perfil & Status Biológico -->
+        <aside class="dash-sidebar">
+          <div class="user-profile-widget">
+            <div class="profile-avatar-circle">
+              <img src="LOGO/APENAS LOGO.png" alt="Gabriela">
+            </div>
+            <h3>Gabriela Borissi</h3>
+            <p style="font-size:0.8rem; color:var(--text-muted);">gabriela@gaju.app</p>
+            <div class="user-status-pill">Ciclo de 28 dias • Regular</div>
+
+            <!-- Ações de Conta: Logoff e Excluir Perfil -->
+            <div class="user-profile-actions">
+              <button type="button" class="btn-user-action logoff" onclick="handleLogoff()" title="Sair da sua conta">
+                Sair da Conta
+              </button>
+              <button type="button" class="btn-user-action delete" onclick="handleDeleteProfile()" title="Excluir perfil e dados">
+                Excluir Perfil
+              </button>
+            </div>
+          </div>
+
+          <!-- Cartão da Fase Biológica -->
+          <div class="cycle-phase-card">
+            <div class="phase-badge-title">
+              <span style="font-size:0.85rem; font-weight:700; color:var(--text-muted);">Status do Ciclo</span>
+              <span id="dash-current-phase-tag" class="phase-tag follicular">Fase Folicular</span>
+            </div>
+
+            <div class="cycle-progress-ring-container">
+              <div id="dash-cycle-day-num" class="cycle-day-huge">Dia 9 <span>/ 28</span></div>
+              <p style="font-size:0.82rem; color:var(--text-muted); margin-top:4px;">Ciclo iniciado em 22 de Agosto</p>
+            </div>
+
+            <div class="energy-meter-box">
+              <div class="energy-meter-label">
+                <span>Nível de Energia Previsto</span>
+                <span id="dash-energy-score-text" style="color:var(--phase-follicular);">88% (Alta)</span>
+              </div>
+              <div class="meter-track">
+                <div id="dash-energy-fill" class="meter-fill" style="width: 88%;"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recomendações do Dia -->
+          <div class="dash-recommendation-card">
+            <h4 id="dash-reco-title"> Recomendação Biológica</h4>
+            <p id="dash-reco-desc">
+              <strong>Foco em Expansão:</strong> Seu estrogênio está subindo, propiciando excelente raciocínio lógico e produtividade.<br>
+              <!-- <div style="margin-top:6px;"><strong>Nutrição:</strong> Alimentos ricos em ferro e magnésio.</div>-->
+            </p>
+          </div>
+
+          <!-- Ações Rápidas -->
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            <button class="btn-primary" data-screen-target="screen-event-reg">
+             + Novo Compromisso
+            </button>
+            <button class="btn-outline" data-screen-target="screen-symptoms">
+              Registrar Sintomas de Hoje
+            </button>
+          </div>
+        </aside>
+
+        <!-- COLUNA CENTRAL: Calendário Biológico Integrado -->
+        <main class="dash-main-center">
+          <div class="calendar-control-bar">
+            <div class="calendar-month-title">
+              <h2 id="calendar-month-heading">Agosto 2026</h2>
+              <div class="cal-nav-buttons">
+                <button id="btn-prev-month" class="btn-cal-arrow" title="Mês anterior">‹</button>
+                <button id="btn-next-month" class="btn-cal-arrow" title="Próximo mês">›</button>
+              </div>
+            </div>
+
+            <!-- Legenda das Fases -->
+            <div class="cycle-legend-bar">
+              <div class="legend-item"><span class="legend-dot menstrual"></span> Menstruação</div>
+              <div class="legend-item"><span class="legend-dot follicular"></span> Folicular (Alta Energia)</div>
+              <div class="legend-item"><span class="legend-dot ovulatory"></span> Ovulação (Criatividade)</div>
+              <div class="legend-item"><span class="legend-dot luteal"></span> Lútea / TPM (Descanso)</div>
+            </div>
+          </div>
+
+          <!-- Grade Mensal Interativa -->
+          <div id="integrated-calendar-grid" class="integrated-calendar-grid">
+            <!-- Gerado dinamicamente via JS -->
+          </div>
+
+          <!-- Rodapé do Calendário: Resumo de Produtividade -->
+          <div style="background:var(--surface-card-subtle); border:1px solid var(--surface-border); border-radius:var(--radius-sm); padding:12px 16px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+            <div style="display:flex; align-items:center; gap:8px; font-size:0.85rem;">
+              
+              <span><strong>Dica GAJU:</strong> Clique em qualquer dia para ver a previsão biológica e tarefas associadas.</span>
+            </div>
+            <button class="btn-outline" style="padding:6px 12px; font-size:0.8rem;" data-screen-target="screen-report">
+              Ver Relatório de Harmonia 
+            </button>
+          </div>
+        </main>
+
+        <!-- COLUNA DIREITA: Detalhes do Dia Selecionado -->
+        <aside class="dash-sidebar-right">
+          <div class="selected-day-card">
+            <div class="day-card-header">
+              <div class="sub-date" id="selected-day-sub">Fase Folicular • Dia 9 do Ciclo</div>
+              <h3 id="selected-day-heading">Domingo, 30 de Agosto</h3>
+            </div>
+
+            <!-- Janela de Produtividade do Dia -->
+            <div id="selected-prod-badge" class="productivity-window-badge focus">
+              <h5> Janela: Foco Alto & Resolução de Problemas</h5>
+              <p>Momento excelente para tarefas intelectuais complexas e reuniões estratégicas.</p>
+            </div>
+
+            <!-- Compromissos do Dia -->
+            <div class="day-section-title">
+              <span>Compromissos do Dia</span>
+            <!-- <button class="btn-outline" style="padding:2px 8px; font-size:0.75rem;" onclick="openNewEventForDate('2026-08-30')">+ Adicionar</button> -->
+            </div>
+            <div id="selected-day-events-list" class="events-list-container">
+              <!-- Renderizado via JS -->
+            </div>
+
+            <!-- Sintomas Registrados no Dia -->
+            <div class="day-section-title" style="margin-top:16px;">
+              <span>Sintomas & Bem-estar Registrados</span>
+            </div>
+            <div id="selected-day-symptoms-cloud" class="day-symptoms-summary">
+              <!-- Renderizado via JS -->
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         TELA 5: REGISTRO DE SINTOMAS & CONTRACEPTIVOS (frmEventos Modernizado)
+         ======================================================================== -->
+    <section id="screen-symptoms" class="screen-view">
+      <div class="symptoms-screen-container">
+        <div class="screen-section-header">
+          <img src="LOGO/APENAS LOGO.png" alt="GAJU" style="height:68px; margin-bottom:12px;">
+          <h2>Registro de Sintomas & Saúde Diária</h2>
+          <p>Selecione as sensações corporais, humor e controle de medicamentos para a data selecionada.</p>
+        </div>
+
+        <form id="form-reg-symptoms">
+          <!-- Data do Registro -->
+          <div class="form-group" style="max-width:320px; margin:0 auto 28px;">
+            <label class="form-label" style="text-align:center;">Selecione a Data do Registro</label>
+            <input type="date" id="symptoms-date-input" class="form-control" style="text-align:center;" value="2026-08-30">
+          </div>
+
+          <!-- SEÇÃO 1: Sintomas Físicos (Imagens da pasta IMAGENS) -->
+          <h3 style="font-size:1.2rem; color:var(--c-crimson-500); margin-bottom:16px; display:flex; align-items:center; gap:8px;">
+             Sintomas e Sensações Corporais
+          </h3>
+
+          <div class="symptoms-selectable-grid">
+            <!-- 1: Está Tudo Bem -->
+            <div class="symptom-checkbox-card selected" data-symptom="joia">
+              <div class="symptom-check-indicator">✓</div>
+              <div class="symptom-img-frame">
+                <img src="IMAGENS/joia.jpg" alt="Está tudo bem">
+              </div>
+              <div class="symptom-card-title">ESTÁ TUDO BEM</div>
+              <span style="font-size:0.75rem; color:var(--text-muted);">Disposição alta & equilíbrio</span>
+            </div>
+
+            <!-- 2: Fadiga -->
+            <div class="symptom-checkbox-card" data-symptom="fadiga">
+              <div class="symptom-check-indicator">✓</div>
+              <div class="symptom-img-frame">
+                <img src="IMAGENS/fadiga.jpg" alt="Fadiga">
+              </div>
+              <div class="symptom-card-title">FADIGA</div>
+              <span style="font-size:0.75rem; color:var(--text-muted);">Cansaço ou falta de energia</span>
+            </div>
+
+            <!-- 3: Dor de Cabeça -->
+            <div class="symptom-checkbox-card" data-symptom="cabeca">
+              <div class="symptom-check-indicator">✓</div>
+              <div class="symptom-img-frame">
+                <img src="IMAGENS/cabeca.jpg" alt="Dor de Cabeça">
+              </div>
+              <div class="symptom-card-title">DOR DE CABEÇA</div>
+              <span style="font-size:0.75rem; color:var(--text-muted);">Enxaqueca ou cefaleia</span>
+            </div>
+
+            <!-- 4: Dor no Seio -->
+            <div class="symptom-checkbox-card" data-symptom="seio">
+              <div class="symptom-check-indicator">✓</div>
+              <div class="symptom-img-frame">
+                <img src="IMAGENS/seio.jpg" alt="Dor no Seio">
+              </div>
+              <div class="symptom-card-title">DOR NO SEIO</div>
+              <span style="font-size:0.75rem; color:var(--text-muted);">Sensibilidade ou inchaço</span>
+            </div>
+
+            <!-- 5: Acne -->
+            <div class="symptom-checkbox-card" data-symptom="acne">
+              <div class="symptom-check-indicator">✓</div>
+              <div class="symptom-img-frame">
+                <img src="IMAGENS/acne.jpg" alt="Acne">
+              </div>
+              <div class="symptom-card-title">ACNE</div>
+              <span style="font-size:0.75rem; color:var(--text-muted);">Alterações na pele</span>
+            </div>
+
+            <!-- 6: Cólicas -->
+            <div class="symptom-checkbox-card" data-symptom="colica">
+              <div class="symptom-check-indicator">✓</div>
+              <div class="symptom-img-frame">
+                <img src="IMAGENS/colica.jpg" alt="Cólicas">
+              </div>
+              <div class="symptom-card-title">CÓLICAS</div>
+              <span style="font-size:0.75rem; color:var(--text-muted);">Desconforto pélvico</span>
+            </div>
+
+            <!-- 7: Início do Ciclo / Menstruação -->
+            <div class="symptom-checkbox-card" data-symptom="ciclo">
+              <div class="symptom-check-indicator">✓</div>
+              <div class="symptom-img-frame">
+                <img src="IMAGENS/ciclo.jfif" alt="Ciclo Menstrual">
+              </div>
+              <div class="symptom-card-title">MENSTRUAÇÃO</div>
+              <span style="font-size:0.75rem; color:var(--text-muted);">Início do fluxo / Menstruação</span>
+            </div>
+          </div>
+
+          <!-- SEÇÃO 2: Contraceptivos (Imagens CERTO e ERRADO) -->
+          <h3 style="font-size:1.2rem; color:var(--c-crimson-500); margin-bottom:16px; display:flex; align-items:center; gap:8px;">
+            <span>💊</span> Registro de Contraceptivo
+          </h3>
+
+          <div class="contraceptive-options-grid">
+            <div class="contraceptive-radio-card selected" data-contra="pontual">
+              <div class="contra-img-frame">
+                <img src="IMAGENS/CERTO.jpg" alt="Tomei pontualmente">
+              </div>
+              <div>
+                <h4 style="font-size:0.95rem; color:var(--text-main);">TOMEI PONTUALMENTE</h4>
+                <p style="font-size:0.8rem; color:var(--text-muted);">Medicamento tomado no horário correto</p>
+              </div>
+            </div>
+
+            <div class="contraceptive-radio-card" data-contra="nao_tomei">
+              <div class="contra-img-frame">
+                <img src="IMAGENS/ERRADO.jpg" alt="Não tomei">
+              </div>
+              <div>
+                <h4 style="font-size:0.95rem; color:var(--text-main);">NÃO TOMEI / ESQUECI</h4>
+                <p style="font-size:0.8rem; color:var(--text-muted);">Registro de esquecimento ou pausa</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slider de Energia e Notas -->
+          <div class="form-group">
+            <label class="form-label">Nível de Disposição & Energia Geral (1 a 10)</label>
+            <input type="range" id="symptoms-energy-slider" min="1" max="10" value="8" style="width:100%; accent-color:var(--c-crimson-500);">
+            <div style="display:flex; justify-content:space-between; font-size:0.75rem; color:var(--text-muted);">
+              <span>1 (Muito Cansada)</span>
+              <span>5 (Moderada)</span>
+              <span>10 (Energia Máxima)</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Notas Adicionais do Dia</label>
+            <textarea id="symptoms-notes-input" class="form-control" rows="3" placeholder="Ex: Treino rendeu muito bem; tomei 2.5L de água; sono reparador."></textarea>
+          </div>
+
+          <div style="display:flex; gap:16px; margin-top:24px;">
+            <button type="button" class="btn-outline" data-screen-target="screen-dashboard">Cancelar</button>
+            <button type="submit" class="btn-primary">Salvar Sintomas & Atualizar Previsão</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         TELA 6: NOVO COMPROMISSO INTELIGENTE (frmRegComp Modernizado + Detecção de Conflitos)
+         ======================================================================== -->
+    <section id="screen-event-reg" class="screen-view">
+      <div class="event-reg-container">
+        <div class="screen-section-header">
+          <img src="LOGO/APENAS LOGO.png" alt="GAJU" style="height:68px; margin-bottom:12px;">
+          <h2>Registrar Novo Compromisso Inteligente</h2>
+          <p>O GAJU analisa automaticamente sua fisiologia para sugerir o melhor horário.</p>
+        </div>
+
+        <form id="form-reg-event">
+          <div class="form-group">
+            <label class="form-label">Título do Compromisso / Tarefa</label>
+            <div class="input-icon-wrapper">
+              <span class="input-icon-left"></span>
+              <input type="text" id="reg-event-title" class="form-control" placeholder="Ex: Apresentação do Projeto TCC" value="Apresentação de Resultados" required>
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label">Categoria</label>
+              <select id="reg-event-category" class="form-control">
+                <option value="work" selected>Trabalho / Estudo</option>
+                <option value="workout">Treino Físico / Academia</option>
+                <option value="health">Saúde / Consulta Médica</option>
+                <option value="social">Lazer / Social</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Nível de Demanda de Energia</label>
+              <select id="reg-event-demand" class="form-control">
+                <option value="high" selected>Alta (Exige muito foco/esforço)</option>
+                <option value="medium">Média (Rotina regular)</option>
+                <option value="low">Baixa (Leve / Relaxante)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label">Data do Evento</label>
+              <input type="date" id="reg-event-date" class="form-control" value="2026-08-30" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Horário (Início - Fim)</label>
+              <input type="text" id="reg-event-time" class="form-control" placeholder="14:00 - 16:00" value="14:00 - 15:30">
+            </div>
+          </div>
+
+          <!-- CARD DE ALERTA INTELIGENTE DE CONFLITO BIOLÓGICO (RF005 / RF008 / BPMN) -->
+          <div id="smart-conflict-alert-card" class="smart-conflict-alert">
+            <div class="alert-title-row">
+              <span>⚠️</span>
+              <span>Alerta de Conflito de Energia GAJU</span>
+            </div>
+            <p id="smart-conflict-desc">
+              Esta data coincide com sua fase de baixa energia ou predisposição a fadiga. Sugerimos agendar para uma data na Fase Folicular.
+            </p>
+            <div class="alert-actions-btns">
+              <button type="button" class="btn-alert-accept" onclick="applySuggestedDate()">Mudar para Data Recomendada</button>
+              <button type="button" class="btn-alert-dismiss" onclick="dismissConflictAlert()">Manter mesmo assim</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Descrição / Observações</label>
+            <textarea id="reg-event-desc" class="form-control" rows="3" placeholder="Detalhes adicionais sobre o compromisso..."></textarea>
+          </div>
+
+          <div style="display:flex; gap:16px; margin-top:24px;">
+            <button type="button" class="btn-outline" data-screen-target="screen-dashboard">Cancelar</button>
+            <button type="submit" class="btn-primary">Salvar Compromisso na Agenda</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         TELA 7: RELATÓRIO DE HARMONIA & ESTATÍSTICAS (UC06)
+         ======================================================================== -->
+    <section id="screen-report" class="screen-view">
+      <div class="harmony-report-container">
+        
+        <!-- Score Card Principal -->
+        <div class="report-hero-score">
+          <div class="score-text-box">
+            <h2>Relatório de Harmonia Cíclica</h2>
+            <p>O algoritmo GAJU cruzou seus registros de tarefas e compromissos com os picos biológicos dos últimos 3 meses para calcular seu alinhamento fisiológico.</p>
+          </div>
+          <div class="score-circle-display">
+            <div id="report-harmony-score" class="score-percentage">88%</div>
+            <div class="score-label">Taxa de Harmonia</div>
+          </div>
+        </div>
+
+        <!-- Grade de Métricas -->
+        <div class="report-metrics-grid">
+          <div class="metric-stat-card">
+            <div class="stat-icon">🎯</div>
+            <h4>Tarefas em Janelas Ideais</h4>
+            <div class="stat-value">18 / 21</div>
+            <div class="stat-trend">↑ 12% em relação ao mês anterior</div>
+          </div>
+
+          <div class="metric-stat-card">
+            <div class="stat-icon">⚡</div>
+            <h4>Aproveitamento de Pico Folicular</h4>
+            <div class="stat-value">94%</div>
+            <div class="stat-trend">Alta eficiência nas fases de foco</div>
+          </div>
+
+          <div class="metric-stat-card">
+            <div class="stat-icon">🌙</div>
+            <h4>Respeito ao Período de TPM</h4>
+            <div class="stat-value">82%</div>
+            <div class="stat-trend">Redução comprovada de estresse</div>
+          </div>
+        </div>
+
+        <!-- Linha do Tempo Visual de Produtividade vs Ciclo -->
+        <div class="cycle-timeline-chart-card">
+          <h3 style="margin-bottom:6px;">Oscilação de Energia & Carga de Tarefas ao Longo do Ciclo</h3>
+          <p style="color:var(--text-muted); font-size:0.85rem; margin-bottom:20px;">Visualize como sua energia biológica se correlaciona com o volume de compromissos concluídos.</p>
+
+          <div class="chart-bars-container">
+            <div class="chart-bar-column">
+              <div class="bar-fill" style="height:35%; background:var(--phase-menstrual);" data-tooltip="Dias 1-5: 35% Energia"></div>
+              <span class="bar-x-label">Menstrual</span>
+            </div>
+            <div class="chart-bar-column">
+              <div class="bar-fill" style="height:65%; background:var(--phase-follicular);" data-tooltip="Dias 6-8: 65% Energia"></div>
+              <span class="bar-x-label">Início Folicular</span>
+            </div>
+            <div class="chart-bar-column">
+              <div class="bar-fill" style="height:90%; background:var(--phase-follicular);" data-tooltip="Dias 9-12: 90% Energia"></div>
+              <span class="bar-x-label">Pico Folicular</span>
+            </div>
+            <div class="chart-bar-column">
+              <div class="bar-fill" style="height:98%; background:var(--phase-ovulatory);" data-tooltip="Dias 13-16: 98% Pico Criativo"></div>
+              <span class="bar-x-label">Ovulação</span>
+            </div>
+            <div class="chart-bar-column">
+              <div class="bar-fill" style="height:70%; background:var(--phase-luteal);" data-tooltip="Dias 17-21: 70% Energia"></div>
+              <span class="bar-x-label">Início Lútea</span>
+            </div>
+            <div class="chart-bar-column">
+              <div class="bar-fill" style="height:45%; background:var(--phase-luteal);" data-tooltip="Dias 22-28: 45% TPM / Descanso"></div>
+              <span class="bar-x-label">Pré-Menstrual</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Insights e Recomendações de Longo Prazo -->
+        <!--<div class="dash-recommendation-card" style="background:#FFFFFF; border:1px solid var(--surface-border);">
+          <h4 style="color:var(--c-crimson-500);">🌸 Insights Preditivos para o Próximo Mês</h4>
+          <ul style="margin-left:20px; font-size:0.9rem; line-height:1.7; color:var(--text-main);">
+            <li>Sua próxima fase de <strong>Pico Criativo (Ovulação)</strong> ocorrerá entre <strong>12 e 16 de Setembro</strong>. Agende apresentações decisivas nessa data!</li>
+            <li>Identificamos que nos dias 23 e 24 de Agosto você registrou cólicas moderadas. Para o próximo ciclo, sugerimos bloquear as manhãs para tarefas assíncronas.</li>
+            <li>Sua taxa de pontualidade no uso de contraceptivo foi de <strong>100%</strong> neste ciclo. Parabéns pela constância!</li>
+          </ul>
+        </div>
+      </div>-->
+    </section>
+
+    <!-- ========================================================================
+         TELA 8: CONFIGURAÇÕES, SINCRONIZAÇÃO & PRIVACIDADE (UC04 / UC05)
+         ======================================================================== -->
+    <section id="screen-settings" class="screen-view">
+      <div class="settings-container">
+        <div class="screen-section-header">
+          <img src="LOGO/APENAS LOGO.png" alt="GAJU" style="height:68px; margin-bottom:12px;">
+          <h2>Sincronização & Configurações de Alertas</h2>
+          <p>Gerencie a integração de calendários externos, lembretes de bem-estar e segurança dos dados.</p>
+        </div>
+
+        <!-- Grupo 1: Sincronização de Calendários Externos (UC04) -->
+        <div class="settings-group-card">
+          <div class="settings-group-header">
+            <h3>Sincronização de Calendários Externos (UC04)</h3>
+          </div>
+
+          <div class="sync-integration-item">
+            <div class="integration-meta">
+              <div class="integration-icon">🌐</div>
+              <div>
+                <h5>Google Calendar</h5>
+                <p>Importa automaticamente reuniões e eventos profissionais</p>
+              </div>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" checked onchange="showToast('Sincronização com Google Calendar atualizada!', 'success')">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+
+          <div class="sync-integration-item">
+            <div class="integration-meta">
+              <div class="integration-icon">💼</div>
+              <div>
+                <h5>Microsoft Outlook Calendar</h5>
+                <p>Sincroniza agenda corporativa e compromissos institucionais</p>
+              </div>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" onchange="showToast('Sincronização com Outlook atualizada!', 'normal')">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Grupo 2: Alertas de Bem-estar (UC05) -->
+        <div class="settings-group-card">
+          <div class="settings-group-header">
+            <span>🔔</span>
+            <h3>Alertas de Bem-estar & Saúde (UC05)</h3>
+          </div>
+
+          <div class="sync-integration-item">
+            <div class="integration-meta">
+              <div class="integration-icon">💧</div>
+              <div>
+                <h5>Lembretes de Hidratação Inteligente</h5>
+                <p>Notificações periódicas com maior frequência na fase lútea</p>
+              </div>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" checked onchange="showToast('Lembrete de hidratação ativo', 'success')">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+
+          <div class="sync-integration-item">
+            <div class="integration-meta">
+              <div class="integration-icon">💊</div>
+              <div>
+                <h5>Lembrete Diário de Contraceptivo</h5>
+                <p>Alarme diário configurado para as <strong>20:00</strong></p>
+              </div>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" checked onchange="showToast('Lembrete de contraceptivo ativo às 20:00', 'success')">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+
+          <div class="sync-integration-item">
+            <div class="integration-meta">
+              <div class="integration-icon">🌙</div>
+              <div>
+                <h5>Aviso Prévio de TPM (2 dias antes)</h5>
+                <p>Sugere redução na carga de compromissos antes dos dias de baixa energia</p>
+              </div>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" checked onchange="showToast('Aviso de TPM antecipado ativado', 'success')">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Grupo 3: Privacidade & LGPD (RNF001 / RN02) -->
+        <div class="settings-group-card">
+          <div class="settings-group-header">
+            <span>🛡️</span>
+            <h3>Privacidade & Segurança de Dados (LGPD)</h3>
+          </div>
+          <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.6; margin-bottom:16px;">
+            Seus dados de saúde íntima são criptografados de ponta a ponta e jamais são comercializados ou compartilhados com terceiros.
+          </p>
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <button class="btn-outline" style="width:auto; padding:8px 16px; font-size:0.85rem;" onclick="showToast('Backup criptografado exportado com sucesso!', 'success')">Exportar Meus Dados</button>
+            <button class="btn-outline" style="width:auto; padding:8px 16px; font-size:0.85rem; color:#C33A3A; border-color:#E66363;" onclick="handleDeleteProfile()">🗑️ Excluir Meu Perfil & Conta</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Scripts -->
+  <script src="js/app.js"></script>
+</body>
+</html>

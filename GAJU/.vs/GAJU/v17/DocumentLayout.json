@@ -1,0 +1,229 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\gabriela.bsousa5\\source\\GAJU\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F2EA99BD-380A-4977-9109-133B484EEE63}|GAJU.csproj|c:\\users\\gabriela.bsousa5\\source\\gaju\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2EA99BD-380A-4977-9109-133B484EEE63}|GAJU.csproj|solutionrelative:class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2EA99BD-380A-4977-9109-133B484EEE63}|GAJU.csproj|C:\\Users\\gabriela.bsousa5\\source\\GAJU\\frmcadastro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F2EA99BD-380A-4977-9109-133B484EEE63}|GAJU.csproj|solutionrelative:frmcadastro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2EA99BD-380A-4977-9109-133B484EEE63}|GAJU.csproj|C:\\Users\\gabriela.bsousa5\\source\\GAJU\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F2EA99BD-380A-4977-9109-133B484EEE63}|GAJU.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2EA99BD-380A-4977-9109-133B484EEE63}|GAJU.csproj|C:\\Users\\gabriela.bsousa5\\source\\GAJU\\frmeventos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F2EA99BD-380A-4977-9109-133B484EEE63}|GAJU.csproj|solutionrelative:frmeventos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2EA99BD-380A-4977-9109-133B484EEE63}|GAJU.csproj|C:\\Users\\gabriela.bsousa5\\source\\GAJU\\frmrecsenha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F2EA99BD-380A-4977-9109-133B484EEE63}|GAJU.csproj|solutionrelative:frmrecsenha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2EA99BD-380A-4977-9109-133B484EEE63}|GAJU.csproj|C:\\Users\\gabriela.bsousa5\\source\\GAJU\\frmpaginicial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F2EA99BD-380A-4977-9109-133B484EEE63}|GAJU.csproj|solutionrelative:frmpaginicial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2EA99BD-380A-4977-9109-133B484EEE63}|GAJU.csproj|C:\\Users\\gabriela.bsousa5\\source\\GAJU\\frmpaginicial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2EA99BD-380A-4977-9109-133B484EEE63}|GAJU.csproj|solutionrelative:frmpaginicial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2EA99BD-380A-4977-9109-133B484EEE63}|GAJU.csproj|C:\\Users\\gabriela.bsousa5\\source\\GAJU\\frmeventos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2EA99BD-380A-4977-9109-133B484EEE63}|GAJU.csproj|solutionrelative:frmeventos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2EA99BD-380A-4977-9109-133B484EEE63}|GAJU.csproj|C:\\Users\\gabriela.bsousa5\\source\\GAJU\\frmregcomp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F2EA99BD-380A-4977-9109-133B484EEE63}|GAJU.csproj|solutionrelative:frmregcomp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2EA99BD-380A-4977-9109-133B484EEE63}|GAJU.csproj|C:\\Users\\gabriela.bsousa5\\source\\GAJU\\frmrecsenha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2EA99BD-380A-4977-9109-133B484EEE63}|GAJU.csproj|solutionrelative:frmrecsenha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2EA99BD-380A-4977-9109-133B484EEE63}|GAJU.csproj|C:\\Users\\gabriela.bsousa5\\source\\GAJU\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2EA99BD-380A-4977-9109-133B484EEE63}|GAJU.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2EA99BD-380A-4977-9109-133B484EEE63}|GAJU.csproj|C:\\Users\\gabriela.bsousa5\\source\\GAJU\\frmregcomp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2EA99BD-380A-4977-9109-133B484EEE63}|GAJU.csproj|solutionrelative:frmregcomp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2EA99BD-380A-4977-9109-133B484EEE63}|GAJU.csproj|C:\\Users\\gabriela.bsousa5\\source\\GAJU\\frmcadastro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2EA99BD-380A-4977-9109-133B484EEE63}|GAJU.csproj|solutionrelative:frmcadastro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmCadastro.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\gabriela.bsousa5\\source\\GAJU\\frmCadastro.cs",
+              "RelativeDocumentMoniker": "frmCadastro.cs",
+              "ToolTip": "C:\\Users\\gabriela.bsousa5\\source\\GAJU\\frmCadastro.cs [Design]",
+              "RelativeToolTip": "frmCadastro.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-28T23:04:27.95Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "frmEventos.cs",
+              "DocumentMoniker": "C:\\Users\\gabriela.bsousa5\\source\\GAJU\\frmEventos.cs",
+              "RelativeDocumentMoniker": "frmEventos.cs",
+              "ToolTip": "C:\\Users\\gabriela.bsousa5\\source\\GAJU\\frmEventos.cs",
+              "RelativeToolTip": "frmEventos.cs",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAswDcAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-25T23:30:06.353Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "frmPagInicial.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\gabriela.bsousa5\\source\\GAJU\\frmPagInicial.cs",
+              "RelativeDocumentMoniker": "frmPagInicial.cs",
+              "ToolTip": "C:\\Users\\gabriela.bsousa5\\source\\GAJU\\frmPagInicial.cs [Design]",
+              "RelativeToolTip": "frmPagInicial.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-28T23:12:58.843Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "frmRecSenha.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\gabriela.bsousa5\\source\\GAJU\\frmRecSenha.cs",
+              "RelativeDocumentMoniker": "frmRecSenha.cs",
+              "ToolTip": "C:\\Users\\gabriela.bsousa5\\source\\GAJU\\frmRecSenha.cs [Design]",
+              "RelativeToolTip": "frmRecSenha.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-25T22:37:21.029Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "frmEventos.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\gabriela.bsousa5\\source\\GAJU\\frmEventos.cs",
+              "RelativeDocumentMoniker": "frmEventos.cs",
+              "ToolTip": "C:\\Users\\gabriela.bsousa5\\source\\GAJU\\frmEventos.cs [Design]",
+              "RelativeToolTip": "frmEventos.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-29T00:26:46.851Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\gabriela.bsousa5\\source\\GAJU\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\gabriela.bsousa5\\source\\GAJU\\Form1.cs [Design]",
+              "RelativeToolTip": "Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-28T22:32:17.173Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\gabriela.bsousa5\\source\\GAJU\\Class1.cs",
+              "RelativeDocumentMoniker": "Class1.cs",
+              "ToolTip": "C:\\Users\\gabriela.bsousa5\\source\\GAJU\\Class1.cs",
+              "RelativeToolTip": "Class1.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-05T22:41:35.981Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "frmPagInicial.cs",
+              "DocumentMoniker": "C:\\Users\\gabriela.bsousa5\\source\\GAJU\\frmPagInicial.cs",
+              "RelativeDocumentMoniker": "frmPagInicial.cs",
+              "ToolTip": "C:\\Users\\gabriela.bsousa5\\source\\GAJU\\frmPagInicial.cs",
+              "RelativeToolTip": "frmPagInicial.cs",
+              "ViewState": "AQIAAE4AAAAAAAAAAAAmwDMAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-28T23:22:15.117Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "frmRegComp.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\gabriela.bsousa5\\source\\GAJU\\frmRegComp.cs",
+              "RelativeDocumentMoniker": "frmRegComp.cs",
+              "ToolTip": "C:\\Users\\gabriela.bsousa5\\source\\GAJU\\frmRegComp.cs [Design]",
+              "RelativeToolTip": "frmRegComp.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-29T00:37:12.527Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "frmRecSenha.cs",
+              "DocumentMoniker": "C:\\Users\\gabriela.bsousa5\\source\\GAJU\\frmRecSenha.cs",
+              "RelativeDocumentMoniker": "frmRecSenha.cs",
+              "ToolTip": "C:\\Users\\gabriela.bsousa5\\source\\GAJU\\frmRecSenha.cs",
+              "RelativeToolTip": "frmRecSenha.cs",
+              "ViewState": "AQIAACYAAAAAAAAAAAAiwDoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-27T22:56:34.078Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\gabriela.bsousa5\\source\\GAJU\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\gabriela.bsousa5\\source\\GAJU\\Form1.cs",
+              "RelativeToolTip": "Form1.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAkwB8AAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-28T22:33:23.961Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "frmRegComp.cs",
+              "DocumentMoniker": "C:\\Users\\gabriela.bsousa5\\source\\GAJU\\frmRegComp.cs",
+              "RelativeDocumentMoniker": "frmRegComp.cs",
+              "ToolTip": "C:\\Users\\gabriela.bsousa5\\source\\GAJU\\frmRegComp.cs",
+              "RelativeToolTip": "frmRegComp.cs",
+              "ViewState": "AQIAACsAAAAAAAAAAAAgwDgAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-25T22:49:19.015Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "frmCadastro.cs",
+              "DocumentMoniker": "C:\\Users\\gabriela.bsousa5\\source\\GAJU\\frmCadastro.cs",
+              "RelativeDocumentMoniker": "frmCadastro.cs",
+              "ToolTip": "C:\\Users\\gabriela.bsousa5\\source\\GAJU\\frmCadastro.cs",
+              "RelativeToolTip": "frmCadastro.cs",
+              "ViewState": "AQIAADcAAAAAAAAAAAAqwB8AAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-27T22:33:42.497Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

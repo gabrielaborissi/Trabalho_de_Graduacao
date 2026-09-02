@@ -1,0 +1,2056 @@
+/* ==========================================================================
+   GAJU - Design System & Stylesheet
+   Harmonizando Ciclos Biológicos & Produtividade
+   Paleta Oficial: #FFDBDB, #FFB7B7, #FF9292, #E66363, #C33A3A
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,400;1,600&display=swap');
+
+:root {
+  /* Paleta Base do Protótipo */
+  --c-blush-100: #FFDBDB;
+  --c-blush-200: #FFB7B7;
+  --c-coral-300: #FF9292;
+  --c-rose-400: #E66363;
+  --c-crimson-500: #C33A3A;
+  --c-crimson-600: #A82828;
+  --c-crimson-dark: #7A1919;
+
+  /* Tons Neutros e Superfícies */
+  --bg-primary: #FFF7F7;
+  --bg-gradient: linear-gradient(135deg, #FFF1F1 0%, #FFE6E6 50%, #FFDBDB 100%);
+  --bg-hero: linear-gradient(145deg, #FFB7B7 0%, #FF9292 60%, #E66363 100%);
+  --surface-card: #FFFFFF;
+  --surface-card-subtle: #FFF9F9;
+  --surface-border: #FFD4D4;
+  --surface-border-strong: #FFB7B7;
+
+  /* Cores de Texto */
+  --text-main: #2C1819;
+  --text-muted: #7A5C5E;
+  --text-light: #A58B8D;
+  --text-on-dark: #FFFFFF;
+  --text-crimson: #C33A3A;
+
+  /* Fases do Ciclo Biológico */
+  --phase-menstrual: #E66363;
+  --phase-menstrual-bg: #FFE5E5;
+  --phase-follicular: #2E9E6B;
+  --phase-follicular-bg: #E3F8EE;
+  --phase-ovulatory: #E67E22;
+  --phase-ovulatory-bg: #FFF3E0;
+  --phase-luteal: #8E44AD;
+  --phase-luteal-bg: #F5EEF8;
+
+  /* Sombras & Efeitos */
+  --shadow-sm: 0 2px 8px rgba(195, 58, 58, 0.06);
+  --shadow-md: 0 8px 24px rgba(195, 58, 58, 0.10);
+  --shadow-lg: 0 16px 36px rgba(195, 58, 58, 0.14);
+  --shadow-glow: 0 0 20px rgba(230, 99, 99, 0.35);
+
+  /* Dimensões e Raios */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 9999px;
+  --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reset Global */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Tipografia */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', sans-serif;
+  color: var(--text-main);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.serif-font {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+a {
+  color: var(--c-crimson-500);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--c-crimson-600);
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   BARRA SUPERIOR DE NAVEGAÇÃO & CONTROLADOR DE PROTÓTIPO
+   ========================================================================== */
+.prototype-topbar {
+  background: #FFFFFF;
+  border-bottom: 1px solid var(--surface-border);
+  padding: 10px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--shadow-sm);
+}
+
+.topbar-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.brand-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  cursor: pointer;
+  height: 42px;
+  overflow: visible;
+}
+
+.brand-badge img {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+  transform: scale(1.5);
+  transform-origin: left center;
+  margin-right: 16px;
+  transition: var(--transition);
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.06));
+}
+
+.brand-badge:hover img {
+  transform: scale(1.58);
+}
+
+.brand-badge .brand-name {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--c-crimson-500);
+  letter-spacing: 0.05em;
+  font-family: 'Outfit', sans-serif;
+}
+
+.brand-badge .badge-tag {
+  background: var(--c-blush-100);
+  color: var(--c-crimson-500);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Seletor de Telas do Protótipo */
+.prototype-nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  overflow-x: auto;
+  padding: 4px 0;
+  scrollbar-width: thin;
+}
+
+.nav-screen-btn {
+  background: var(--surface-card-subtle);
+  border: 1px solid var(--surface-border);
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 7px 14px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: var(--transition);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.nav-screen-btn:hover {
+  background: var(--c-blush-100);
+  color: var(--c-crimson-500);
+  border-color: var(--c-coral-300);
+}
+
+.nav-screen-btn.active {
+  background: var(--c-crimson-500);
+  color: #FFFFFF;
+  border-color: var(--c-crimson-500);
+  box-shadow: 0 4px 12px rgba(195, 58, 58, 0.25);
+}
+
+/* Simulador de Fase Biológica */
+.phase-simulator-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface-card-subtle);
+  border: 1px solid var(--surface-border);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.phase-simulator-pill select {
+  border: none;
+  background: transparent;
+  color: var(--c-crimson-500);
+  font-weight: 700;
+  font-size: 0.82rem;
+  cursor: pointer;
+  outline: none;
+  font-family: inherit;
+}
+
+/* ==========================================================================
+   ESTRUTURA PRINCIPAL DAS TELAS (SPA CONTAINER)
+   ========================================================================== */
+.prototype-viewport {
+  flex: 1;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 24px 20px 48px;
+  display: flex;
+  flex-direction: column;
+}
+
+.screen-view {
+  display: none;
+  animation: fadeInView 0.35s ease-out forwards;
+  width: 100%;
+}
+
+.screen-view.active-screen {
+  display: block;
+}
+
+@keyframes fadeInView {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   LAYOUT SPLIT: TELAS DE LOGIN & CADASTRO (Inspirado nas Imagens Base)
+   ========================================================================== */
+.auth-split-wrapper {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  min-height: 640px;
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--surface-border);
+}
+
+/* Banner Esquerdo Rosado / Coral */
+.auth-hero-banner {
+  background: var(--bg-hero);
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-hero-banner::after {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -20%;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(255,255,255,0.25) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.banner-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.banner-logo-img {
+  height: 72px;
+  width: auto;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.15));
+}
+
+.banner-logo-text {
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #FFFFFF;
+}
+
+.banner-middle {
+  margin: 40px 0;
+}
+
+.banner-middle h1 {
+  font-size: 2.5rem;
+  line-height: 1.15;
+  color: #FFFFFF;
+  margin-bottom: 12px;
+  font-weight: 800;
+}
+
+.banner-middle h1 .highlight-text {
+  color: #FFE6E6;
+  text-decoration: underline wavy var(--c-blush-100) 3px;
+}
+
+.banner-middle p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  opacity: 0.95;
+  margin-bottom: 28px;
+  max-width: 440px;
+}
+
+.banner-features-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.banner-features-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.98rem;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(8px);
+  padding: 10px 16px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.banner-feature-bullet {
+  width: 10px;
+  height: 10px;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(255,255,255,0.8);
+}
+
+.banner-footer-quote {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1rem;
+  opacity: 0.9;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 16px;
+}
+
+/* Painel Direito de Formulário */
+.auth-form-container {
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #FFFFFF;
+}
+
+.auth-form-card {
+  max-width: 420px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.auth-header-mini {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.auth-header-mini .logo-icon {
+  height: 72px;
+  width: auto;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 2px 8px rgba(195,58,58,0.15));
+}
+
+.auth-header-mini .auth-brand-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--c-crimson-500);
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+}
+
+.auth-header-mini .auth-subtitle {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+/* Botões Sociais */
+.social-login-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.btn-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid #E2D2D2;
+  background: #FFFFFF;
+  color: var(--text-main);
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: inherit;
+}
+
+.btn-social:hover {
+  background: var(--surface-card-subtle);
+  border-color: var(--c-coral-300);
+  transform: translateY(-1px);
+}
+
+.btn-social svg, .btn-social img {
+  width: 18px;
+  height: 18px;
+}
+
+.auth-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 20px 0;
+  color: var(--text-light);
+  font-size: 0.85rem;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #EEDDDD;
+}
+
+.auth-divider span {
+  padding: 0 12px;
+}
+
+/* Campos de Formulário */
+.form-group {
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.input-icon-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon-wrapper .input-icon-left {
+  position: absolute;
+  left: 14px;
+  color: var(--text-light);
+  pointer-events: none;
+  font-size: 1.1rem;
+}
+
+.input-icon-wrapper .input-icon-right {
+  position: absolute;
+  right: 14px;
+  color: var(--text-light);
+  cursor: pointer;
+  font-size: 1.1rem;
+  background: none;
+  border: none;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  background-color: #FFFFFF;
+  border: 1.5px solid #E8D4D4;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+  font-family: inherit;
+  outline: none;
+}
+
+.input-icon-wrapper .form-control {
+  padding-left: 42px;
+  padding-right: 42px;
+}
+
+.form-control:focus {
+  border-color: var(--c-rose-400);
+  box-shadow: 0 0 0 4px rgba(230, 99, 99, 0.12);
+  background-color: #FFFFFF;
+}
+
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* Botões Principais */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 13px 20px;
+  background-color: var(--c-crimson-500);
+  color: #FFFFFF;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: inherit;
+  box-shadow: 0 4px 14px rgba(195, 58, 58, 0.28);
+}
+
+.btn-primary:hover {
+  background-color: var(--c-crimson-600);
+  box-shadow: 0 6px 20px rgba(195, 58, 58, 0.38);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px 20px;
+  background-color: transparent;
+  color: var(--c-crimson-500);
+  border: 1.5px solid var(--c-crimson-500);
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: inherit;
+}
+
+.btn-outline:hover {
+  background-color: var(--c-blush-100);
+  border-color: var(--c-crimson-600);
+}
+
+/* Links & Rodapés de Autenticação */
+.auth-actions-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 12px 0 20px;
+  font-size: 0.85rem;
+}
+
+.auth-bottom-switch {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* Termos de Uso / Checkbox */
+.custom-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  margin: 14px 0;
+  line-height: 1.4;
+}
+
+.custom-checkbox input[type="checkbox"] {
+  accent-color: var(--c-crimson-500);
+  width: 17px;
+  height: 17px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* Indicador de Força de Senha */
+.password-strength-bar {
+  height: 4px;
+  background: #E8D4D4;
+  border-radius: var(--radius-pill);
+  margin-top: 6px;
+  overflow: hidden;
+}
+
+.password-strength-fill {
+  height: 100%;
+  width: 60%;
+  background: var(--c-coral-300);
+  transition: var(--transition);
+}
+
+.password-strength-text {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 3px;
+  display: block;
+}
+
+/* ==========================================================================
+   STEPPER DE CADASTRO (Multi-step Onboarding)
+   ========================================================================== */
+.stepper-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 28px;
+  position: relative;
+}
+
+.step-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+  z-index: 2;
+}
+
+.step-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #EEDDDD;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  transition: var(--transition);
+}
+
+.step-item.active .step-circle {
+  background: var(--c-crimson-500);
+  color: #FFFFFF;
+  box-shadow: 0 0 0 4px var(--c-blush-100);
+}
+
+.step-item.completed .step-circle {
+  background: var(--phase-follicular);
+  color: #FFFFFF;
+}
+
+.step-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.step-item.active .step-label {
+  color: var(--c-crimson-500);
+}
+
+.step-tab-content {
+  display: none;
+}
+
+.step-tab-content.active-step {
+  display: block;
+  animation: fadeInView 0.3s ease-out;
+}
+
+/* Card Dica com Ícone de Lâmpada */
+.tip-callout {
+  background: var(--c-blush-100);
+  border-left: 4px solid var(--c-rose-400);
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 16px 0;
+  font-size: 0.85rem;
+  color: var(--text-main);
+}
+
+.tip-callout .tip-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   MINI-CALENDÁRIO DE SELEÇÃO (Para Data de Nasc. e Data de Início)
+   ========================================================================== */
+.calendar-picker-card {
+  background: #FFFFFF;
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 16px;
+}
+
+.cal-header-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.cal-header-controls .cal-btn-nav {
+  background: var(--surface-card-subtle);
+  border: 1px solid var(--surface-border);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--c-crimson-500);
+  font-weight: 700;
+}
+
+.cal-selectors-group {
+  display: flex;
+  gap: 8px;
+}
+
+.cal-selectors-group select {
+  padding: 4px 8px;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--surface-border);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-main);
+  background: #FFF9F9;
+  outline: none;
+}
+
+.cal-grid-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  text-align: center;
+}
+
+.cal-weekday {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-light);
+  padding: 4px 0;
+}
+
+.cal-day-cell {
+  padding: 6px 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: var(--transition);
+  color: var(--text-main);
+}
+
+.cal-day-cell:hover {
+  background: var(--c-blush-100);
+  color: var(--c-crimson-500);
+}
+
+.cal-day-cell.selected {
+  background: var(--c-crimson-500);
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+.cal-day-cell.other-month {
+  color: #E2CDCD;
+}
+
+/* ==========================================================================
+   TELA PRINCIPAL: DASHBOARD INTEGRADO (frmPagInicial Avançado)
+   ========================================================================== */
+.dashboard-grid-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr 340px;
+  gap: 24px;
+  align-items: start;
+}
+
+/* Painel Lateral Esquerdo: Perfil & Fases */
+.dash-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.user-profile-widget {
+  background: #FFFFFF;
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.user-profile-widget::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background: var(--bg-hero);
+}
+
+.profile-avatar-circle {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  padding: 6px;
+  margin: 10px auto 10px;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  z-index: 1;
+}
+
+.profile-avatar-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.user-profile-widget h3 {
+  font-size: 1.15rem;
+  margin-bottom: 2px;
+}
+
+.user-profile-widget .user-status-pill {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  background: var(--c-blush-100);
+  color: var(--c-crimson-500);
+  margin-top: 6px;
+}
+
+.user-profile-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--surface-border);
+}
+
+.btn-user-action {
+  background: var(--surface-card-subtle);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-pill);
+  padding: 6px 12px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: var(--transition);
+  font-family: inherit;
+}
+
+.btn-user-action.logoff:hover {
+  background: var(--c-blush-100);
+  color: var(--c-crimson-500);
+  border-color: var(--c-coral-300);
+}
+
+.btn-user-action.delete:hover {
+  background: #FFE5E5;
+  color: #C33A3A;
+  border-color: #E66363;
+}
+
+/* Cartão do Ciclo Atual */
+.cycle-phase-card {
+  background: #FFFFFF;
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+.cycle-phase-card .phase-badge-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.phase-tag {
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.phase-tag.menstrual { background: var(--phase-menstrual-bg); color: var(--phase-menstrual); }
+.phase-tag.follicular { background: var(--phase-follicular-bg); color: var(--phase-follicular); }
+.phase-tag.ovulatory { background: var(--phase-ovulatory-bg); color: var(--phase-ovulatory); }
+.phase-tag.luteal { background: var(--phase-luteal-bg); color: var(--phase-luteal); }
+
+.cycle-progress-ring-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 16px 0;
+}
+
+.cycle-day-huge {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--c-crimson-500);
+  line-height: 1;
+}
+
+.cycle-day-huge span {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.energy-meter-box {
+  background: var(--surface-card-subtle);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+  margin-top: 12px;
+}
+
+.energy-meter-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.meter-track {
+  height: 8px;
+  background: #EEDDDD;
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+}
+
+.meter-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--c-coral-300), var(--phase-follicular));
+  border-radius: var(--radius-pill);
+  transition: width 0.5s ease;
+}
+
+/* Recomendações de Bem-estar & Janelas */
+.dash-recommendation-card {
+  background: linear-gradient(135deg, #FFF0F0 0%, #FFE6E6 100%);
+  border: 1px solid var(--c-blush-200);
+  border-radius: var(--radius-md);
+  padding: 18px;
+}
+
+.dash-recommendation-card h4 {
+  font-size: 0.95rem;
+  color: var(--c-crimson-500);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.dash-recommendation-card p {
+  font-size: 0.85rem;
+  color: var(--text-main);
+  line-height: 1.45;
+}
+
+/* ==========================================================================
+   COLUNA CENTRAL: CALENDÁRIO INTEGRADO E JANELAS DE PRODUTIVIDADE
+   ========================================================================== */
+.dash-main-center {
+  background: #FFFFFF;
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.calendar-control-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.calendar-month-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.calendar-month-title h2 {
+  font-size: 1.5rem;
+  color: var(--text-main);
+}
+
+.cal-nav-buttons {
+  display: flex;
+  gap: 6px;
+}
+
+.btn-cal-arrow {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--surface-border);
+  background: #FFFFFF;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-crimson-500);
+  font-weight: 700;
+  transition: var(--transition);
+}
+
+.btn-cal-arrow:hover {
+  background: var(--c-blush-100);
+}
+
+/* Legenda das Fases no Calendário */
+.cycle-legend-bar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  background: var(--surface-card-subtle);
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.legend-dot.menstrual { background: var(--phase-menstrual); }
+.legend-dot.follicular { background: var(--phase-follicular); }
+.legend-dot.ovulatory { background: var(--phase-ovulatory); }
+.legend-dot.luteal { background: var(--phase-luteal); }
+
+/* Grade Mensal Completa */
+.integrated-calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+.grid-day-header {
+  text-align: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-light);
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--surface-border);
+}
+
+.calendar-day-box {
+  min-height: 90px;
+  background: #FFFFFF;
+  border: 1.5px solid #F2E3E3;
+  border-radius: var(--radius-sm);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+}
+
+.calendar-day-box:hover {
+  border-color: var(--c-rose-400);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.calendar-day-box.selected-day {
+  border-color: var(--c-crimson-500);
+  box-shadow: 0 0 0 2px var(--c-crimson-500), var(--shadow-md);
+  background: #FFFDFD;
+}
+
+.calendar-day-box.phase-menstrual-cell {
+  background-color: rgba(230, 99, 99, 0.07);
+  border-top: 3px solid var(--phase-menstrual);
+}
+
+.calendar-day-box.phase-follicular-cell {
+  background-color: rgba(46, 158, 107, 0.06);
+  border-top: 3px solid var(--phase-follicular);
+}
+
+.calendar-day-box.phase-ovulatory-cell {
+  background-color: rgba(230, 126, 34, 0.07);
+  border-top: 3px solid var(--phase-ovulatory);
+}
+
+.calendar-day-box.phase-luteal-cell {
+  background-color: rgba(142, 68, 173, 0.07);
+  border-top: 3px solid var(--phase-luteal);
+}
+
+.day-box-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.day-number {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.calendar-day-box.today .day-number {
+  background: var(--c-crimson-500);
+  color: #FFFFFF;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+}
+
+.day-phase-mini-icon {
+  font-size: 0.75rem;
+}
+
+.day-events-pills {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-top: 4px;
+}
+
+.event-mini-pill {
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 2px 5px;
+  border-radius: var(--radius-xs);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: #FFE8E8;
+  color: var(--c-crimson-500);
+}
+
+.event-mini-pill.work { background: #E3F2FD; color: #1565C0; }
+.event-mini-pill.workout { background: #E8F5E9; color: #2E7D32; }
+.event-mini-pill.health { background: #FFF3E0; color: #E65100; }
+
+.symptom-icons-row {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  margin-top: auto;
+}
+
+.symptom-mini-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--c-rose-400);
+}
+
+/* ==========================================================================
+   COLUNA DIREITA: DETALHES DO DIA SELECIONADO & ATIVIDADES
+   ========================================================================== */
+.dash-sidebar-right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.selected-day-card {
+  background: #FFFFFF;
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+.day-card-header {
+  border-bottom: 1px solid var(--surface-border);
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+}
+
+.day-card-header h3 {
+  font-size: 1.25rem;
+  color: var(--text-main);
+}
+
+.day-card-header .sub-date {
+  font-size: 0.85rem;
+  color: var(--c-crimson-500);
+  font-weight: 600;
+}
+
+/* Janela de Produtividade em Destaque */
+.productivity-window-badge {
+  background: var(--surface-card-subtle);
+  border-left: 4px solid var(--phase-follicular);
+  padding: 10px 14px;
+  border-radius: var(--radius-xs);
+  margin-bottom: 16px;
+}
+
+.productivity-window-badge.focus {
+  border-left-color: var(--phase-follicular);
+}
+
+.productivity-window-badge.rest {
+  border-left-color: var(--c-rose-400);
+  background: #FFF5F5;
+}
+
+.productivity-window-badge.creative {
+  border-left-color: var(--phase-ovulatory);
+}
+
+.productivity-window-badge h5 {
+  font-size: 0.85rem;
+  margin-bottom: 2px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.productivity-window-badge p {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* Seção de Compromissos do Dia */
+.day-section-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.events-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 240px;
+  overflow-y: auto;
+  margin-bottom: 16px;
+}
+
+.event-item-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--surface-card-subtle);
+  border: 1px solid var(--surface-border);
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+
+.event-item-card:hover {
+  background: #FFFFFF;
+  border-color: var(--c-coral-300);
+}
+
+.event-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.event-category-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-xs);
+  background: #FFFFFF;
+  border: 1px solid var(--surface-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.event-text h5 {
+  font-size: 0.88rem;
+  margin-bottom: 2px;
+}
+
+.event-text .event-meta {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.event-delete-btn {
+  background: none;
+  border: none;
+  color: #CC9999;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: var(--transition);
+}
+
+.event-delete-btn:hover {
+  color: var(--c-crimson-500);
+  background: #FFE5E5;
+}
+
+/* Seção de Sintomas Registrados no Dia */
+.day-symptoms-summary {
+  background: #FFFFFF;
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-md);
+  padding: 16px;
+}
+
+.symptoms-tags-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.symptom-pill-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  background: var(--c-blush-100);
+  color: var(--c-crimson-500);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.symptom-pill-tag img {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   TELA DE REGISTRO DE SINTOMAS & CONTRACEPTIVOS (frmEventos)
+   ========================================================================== */
+.symptoms-screen-container {
+  background: #FFFFFF;
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  box-shadow: var(--shadow-lg);
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.screen-section-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.screen-section-header h2 {
+  font-size: 2rem;
+  color: var(--c-crimson-500);
+  letter-spacing: -0.02em;
+}
+
+.screen-section-header p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* Grid de Sintomas Visuais com as Imagens Oficiais */
+.symptoms-selectable-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.symptom-checkbox-card {
+  position: relative;
+  background: var(--surface-card-subtle);
+  border: 2px solid var(--surface-border);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.symptom-checkbox-card:hover {
+  border-color: var(--c-coral-300);
+  background: #FFF0F0;
+  transform: translateY(-2px);
+}
+
+.symptom-checkbox-card.selected {
+  border-color: var(--c-crimson-500);
+  background: #FFEAEA;
+  box-shadow: 0 4px 14px rgba(195, 58, 58, 0.15);
+}
+
+.symptom-img-frame {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--c-blush-200);
+  margin-bottom: 10px;
+  box-shadow: var(--shadow-sm);
+  background: #FFFFFF;
+}
+
+.symptom-img-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.symptom-card-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 4px;
+}
+
+.symptom-check-indicator {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #D5BABA;
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: transparent;
+  transition: var(--transition);
+}
+
+.symptom-checkbox-card.selected .symptom-check-indicator {
+  background: var(--c-crimson-500);
+  border-color: var(--c-crimson-500);
+  color: #FFFFFF;
+}
+
+/* Seção de Contraceptivos */
+.contraceptive-options-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 16px 0 28px;
+}
+
+.contraceptive-radio-card {
+  border: 2px solid var(--surface-border);
+  background: var(--surface-card-subtle);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.contraceptive-radio-card:hover {
+  border-color: var(--c-coral-300);
+}
+
+.contraceptive-radio-card.selected {
+  border-color: var(--c-crimson-500);
+  background: #FFEAEA;
+}
+
+.contra-img-frame {
+  width: 54px;
+  height: 54px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--surface-border);
+  flex-shrink: 0;
+}
+
+.contra-img-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   TELA DE REGISTRO DE COMPROMISSO INTELIGENTE (frmRegComp + Smart Warning)
+   ========================================================================== */
+.event-reg-container {
+  background: #FFFFFF;
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  box-shadow: var(--shadow-lg);
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* Card de Alerta Inteligente de Conflito Biológico (RF005 / RF008 / BPMN) */
+.smart-conflict-alert {
+  background: #FFF3CD;
+  border: 2px solid #FFEEBA;
+  border-left: 6px solid #E67E22;
+  border-radius: var(--radius-md);
+  padding: 18px;
+  margin: 20px 0;
+  display: none;
+  animation: slideDownAlert 0.3s ease-out forwards;
+}
+
+.smart-conflict-alert.show-alert {
+  display: block;
+}
+
+@keyframes slideDownAlert {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.smart-conflict-alert .alert-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #856404;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+
+.smart-conflict-alert p {
+  font-size: 0.88rem;
+  color: #533f03;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.alert-actions-btns {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn-alert-accept {
+  background: #E67E22;
+  color: #FFFFFF;
+  border: none;
+  padding: 8px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-alert-accept:hover {
+  background: #D35400;
+}
+
+.btn-alert-dismiss {
+  background: transparent;
+  border: 1px solid #856404;
+  color: #856404;
+  padding: 8px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   TELA: RELATÓRIO DE HARMONIA & ESTATÍSTICAS (UC06)
+   ========================================================================== */
+.harmony-report-container {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.report-hero-score {
+  background: var(--bg-hero);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--shadow-md);
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.score-text-box h2 {
+  color: #FFFFFF;
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.score-text-box p {
+  opacity: 0.92;
+  max-width: 520px;
+  font-size: 0.95rem;
+}
+
+.score-circle-display {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  border: 4px solid #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.score-percentage {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.score-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.report-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.metric-stat-card {
+  background: #FFFFFF;
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.metric-stat-card .stat-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background: var(--c-blush-100);
+  color: var(--c-crimson-500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  margin-bottom: 14px;
+}
+
+.metric-stat-card h4 {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.metric-stat-card .stat-value {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 4px;
+}
+
+.metric-stat-card .stat-trend {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--phase-follicular);
+}
+
+/* Gráfico de Barras / Linha do Tempo de Produtividade */
+.cycle-timeline-chart-card {
+  background: #FFFFFF;
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  box-shadow: var(--shadow-sm);
+}
+
+.chart-bars-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 200px;
+  padding: 20px 0 10px;
+  border-bottom: 2px solid #EEDDDD;
+  gap: 8px;
+}
+
+.chart-bar-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.bar-fill {
+  width: 100%;
+  max-width: 36px;
+  background: var(--c-coral-300);
+  border-radius: var(--radius-xs) var(--radius-xs) 0 0;
+  transition: height 0.6s ease;
+  position: relative;
+}
+
+.bar-fill:hover {
+  background: var(--c-crimson-500);
+}
+
+.bar-fill::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--text-main);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+.bar-fill:hover::after {
+  opacity: 1;
+}
+
+.bar-x-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   TELA: CONFIGURAÇÕES, SINCRONIZAÇÃO & PRIVACIDADE (UC04 / UC05)
+   ========================================================================== */
+.settings-container {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.settings-group-card {
+  background: #FFFFFF;
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.settings-group-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid var(--surface-border);
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+}
+
+.settings-group-header h3 {
+  font-size: 1.2rem;
+}
+
+.sync-integration-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+  border-bottom: 1px solid #F6EAEA;
+}
+
+.sync-integration-item:last-child {
+  border-bottom: none;
+}
+
+.integration-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.integration-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-card-subtle);
+  border: 1px solid var(--surface-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+}
+
+.integration-meta h5 {
+  font-size: 0.95rem;
+  margin-bottom: 2px;
+}
+
+.integration-meta p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 26px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #E2CDCD;
+  transition: .3s;
+  border-radius: 34px;
+}
+
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .3s;
+  border-radius: 50%;
+}
+
+.toggle-switch input:checked + .toggle-slider {
+  background-color: var(--c-crimson-500);
+}
+
+.toggle-switch input:checked + .toggle-slider:before {
+  transform: translateX(22px);
+}
+
+/* ==========================================================================
+   TOAST NOTIFICATION & FEEDBACK VISUAL
+   ========================================================================== */
+.toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.toast-message {
+  background: #FFFFFF;
+  color: var(--text-main);
+  border-left: 5px solid var(--c-crimson-500);
+  padding: 14px 20px;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  animation: slideInToast 0.3s ease-out forwards;
+}
+
+.toast-message.success {
+  border-left-color: var(--phase-follicular);
+}
+
+@keyframes slideInToast {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE (RNF003 / RNF005: Desktop & Mobile)
+   ========================================================================== */
+@media (max-width: 1100px) {
+  .dashboard-grid-layout {
+    grid-template-columns: 1fr;
+  }
+  .report-metrics-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 860px) {
+  .auth-split-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .auth-hero-banner {
+    padding: 32px 24px;
+  }
+  .auth-form-container {
+    padding: 32px 20px;
+  }
+  .prototype-topbar {
+    padding: 8px 12px;
+  }
+  .topbar-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .prototype-nav {
+    width: 100%;
+  }
+}
